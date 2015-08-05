@@ -6,4 +6,4 @@ description = "Bindings for KVM interface"
 homepage = "https://github.com/dschatzberg/kvm"
 repository = "https://github.com/dschatzberg/kvm.git"
 keywords = ["kvm", "virtualization"]
-license = "Apache"
+license = "Apache-2.0"
