@@ -1,0 +1,9 @@
+[package]
+name = "kvm"
+version = "0.1.0"
+authors = ["Dan Schatzberg <schatzberg.dan@gmail.com>"]
+description = "Bindings for KVM interface"
+homepage = "https://github.com/dschatzberg/kvm"
+repository = "https://github.com/dschatzberg/kvm.git"
+keywords = ["kvm", "virtualization"]
+license = "Apache"
