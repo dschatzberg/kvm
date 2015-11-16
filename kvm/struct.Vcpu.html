@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Vcpu` struct in crate `kvm`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Vcpu">
+
+    <title>kvm::Vcpu - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>kvm</a></p><script>window.sidebarCurrent = {name: 'Vcpu', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>kvm</a>::<wbr><a class='struct' href=''>Vcpu</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-4549' class='srclink' href='../src/kvm/lib.rs.html#165-169' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Vcpu&lt;'a&gt; {
+    // some fields omitted
+}</pre><div class='docblock'><p>A Virtual CPU.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='struct' href='../kvm/struct.Vcpu.html' title='kvm::Vcpu'>Vcpu</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.create' class='method'><code>fn <a href='#method.create' class='fnname'>create</a>(vm: &amp;'a mut <a class='struct' href='../kvm/struct.VirtualMachine.html' title='kvm::VirtualMachine'>VirtualMachine</a>&lt;'a&gt;) -&gt; <a class='type' href='../kvm/type.Result.html' title='kvm::Result'>Result</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Create a <code>Vcpu</code> on the specified <code>VirtualMachine</code></p>
+</div><h4 id='method.run' class='method'><code>unsafe fn <a href='#method.run' class='fnname'>run</a>(&amp;mut self) -&gt; <a class='type' href='../kvm/type.Result.html' title='kvm::Result'>Result</a>&lt;&amp;mut <a class='struct' href='../kvm/struct.Run.html' title='kvm::Run'>Run</a>&gt;</code></h4>
+<div class='docblock'><p>Run the <code>Vcpu</code></p>
+</div><h4 id='method.get_regs' class='method'><code>fn <a href='#method.get_regs' class='fnname'>get_regs</a>(&amp;self) -&gt; <a class='type' href='../kvm/type.Result.html' title='kvm::Result'>Result</a>&lt;<a class='struct' href='../kvm/struct.Regs.html' title='kvm::Regs'>Regs</a>&gt;</code></h4>
+<div class='docblock'><p>Get registers</p>
+</div><h4 id='method.set_regs' class='method'><code>fn <a href='#method.set_regs' class='fnname'>set_regs</a>(&amp;mut self, regs: &amp;<a class='struct' href='../kvm/struct.Regs.html' title='kvm::Regs'>Regs</a>) -&gt; <a class='type' href='../kvm/type.Result.html' title='kvm::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+<div class='docblock'><p>Set registers</p>
+</div></div><h3 class='impl'><code>impl&lt;'a&gt; <a class='struct' href='../kvm/struct.Vcpu.html' title='kvm::Vcpu'>Vcpu</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.set_cpuid2' class='method'><code>fn <a href='#method.set_cpuid2' class='fnname'>set_cpuid2</a>(&amp;mut self, cpuid: &amp;mut <a class='struct' href='../kvm/struct.Cpuid2.html' title='kvm::Cpuid2'>Cpuid2</a>) -&gt; <a class='type' href='../kvm/type.Result.html' title='kvm::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+<div class='docblock'><p>Set the response to the CPUID instruction</p>
+</div><h4 id='method.get_sregs' class='method'><code>fn <a href='#method.get_sregs' class='fnname'>get_sregs</a>(&amp;self) -&gt; <a class='type' href='../kvm/type.Result.html' title='kvm::Result'>Result</a>&lt;<a class='struct' href='../kvm/struct.Sregs.html' title='kvm::Sregs'>Sregs</a>&gt;</code></h4>
+<div class='docblock'><p>Get special registers</p>
+</div><h4 id='method.set_sregs' class='method'><code>fn <a href='#method.set_sregs' class='fnname'>set_sregs</a>(&amp;mut self, sregs: &amp;<a class='struct' href='../kvm/struct.Sregs.html' title='kvm::Sregs'>Sregs</a>) -&gt; <a class='type' href='../kvm/type.Result.html' title='kvm::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+<div class='docblock'><p>Set special registers</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../kvm/struct.Vcpu.html' title='kvm::Vcpu'>Vcpu</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, fmt: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "kvm";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>

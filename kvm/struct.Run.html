@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Run` struct in crate `kvm`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Run">
+
+    <title>kvm::Run - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>kvm</a></p><script>window.sidebarCurrent = {name: 'Run', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>kvm</a>::<wbr><a class='struct' href=''>Run</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-4592' class='srclink' href='../src/kvm/lib.rs.html#185-198' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Run {
+    pub exit_reason: <a class='enum' href='../kvm/enum.Exit.html' title='kvm::Exit'>Exit</a>,
+    pub ready_for_interrupt_injection: <a href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
+    pub if_flag: <a href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
+    pub flags: <a href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
+    pub cr8: <a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a>,
+    pub apic_base: <a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a>,
+    pub kvm_valid_regs: <a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a>,
+    pub kvm_dirty_regs: <a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a>,
+    pub s: <a class='struct' href='../kvm/struct.Union_Unnamed26.html' title='kvm::Union_Unnamed26'>Union_Unnamed26</a>,
+    // some fields omitted
+}</pre><div class='docblock'><p>Information about the reason <code>run</code> returned</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.exit_reason'><code>exit_reason</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.ready_for_interrupt_injection'><code>ready_for_interrupt_injection</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.if_flag'><code>if_flag</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.flags'><code>flags</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.cr8'><code>cr8</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.apic_base'><code>apic_base</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.kvm_valid_regs'><code>kvm_valid_regs</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.kvm_dirty_regs'><code>kvm_dirty_regs</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.s'><code>s</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../kvm/struct.Run.html' title='kvm::Run'>Run</a></code></h3><div class='impl-items'><h4 id='method.hw' class='method'><code>fn <a href='#method.hw' class='fnname'>hw</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed9.html' title='kvm::Struct_Unnamed9'>Struct_Unnamed9</a></a></code></h4>
+<h4 id='method.hw_mut' class='method'><code>fn <a href='#method.hw_mut' class='fnname'>hw_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed9.html' title='kvm::Struct_Unnamed9'>Struct_Unnamed9</a></a></code></h4>
+<h4 id='method.fail_entry' class='method'><code>fn <a href='#method.fail_entry' class='fnname'>fail_entry</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed10.html' title='kvm::Struct_Unnamed10'>Struct_Unnamed10</a></a></code></h4>
+<h4 id='method.fail_entry_mut' class='method'><code>fn <a href='#method.fail_entry_mut' class='fnname'>fail_entry_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed10.html' title='kvm::Struct_Unnamed10'>Struct_Unnamed10</a></a></code></h4>
+<h4 id='method.ex' class='method'><code>fn <a href='#method.ex' class='fnname'>ex</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed11.html' title='kvm::Struct_Unnamed11'>Struct_Unnamed11</a></a></code></h4>
+<h4 id='method.ex_mut' class='method'><code>fn <a href='#method.ex_mut' class='fnname'>ex_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed11.html' title='kvm::Struct_Unnamed11'>Struct_Unnamed11</a></a></code></h4>
+<h4 id='method.io' class='method'><code>fn <a href='#method.io' class='fnname'>io</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.ExitIo.html' title='kvm::ExitIo'>ExitIo</a></a></code></h4>
+<h4 id='method.io_mut' class='method'><code>fn <a href='#method.io_mut' class='fnname'>io_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.ExitIo.html' title='kvm::ExitIo'>ExitIo</a></a></code></h4>
+<h4 id='method.debug' class='method'><code>fn <a href='#method.debug' class='fnname'>debug</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed13.html' title='kvm::Struct_Unnamed13'>Struct_Unnamed13</a></a></code></h4>
+<h4 id='method.debug_mut' class='method'><code>fn <a href='#method.debug_mut' class='fnname'>debug_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed13.html' title='kvm::Struct_Unnamed13'>Struct_Unnamed13</a></a></code></h4>
+<h4 id='method.mmio' class='method'><code>fn <a href='#method.mmio' class='fnname'>mmio</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed14.html' title='kvm::Struct_Unnamed14'>Struct_Unnamed14</a></a></code></h4>
+<h4 id='method.mmio_mut' class='method'><code>fn <a href='#method.mmio_mut' class='fnname'>mmio_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed14.html' title='kvm::Struct_Unnamed14'>Struct_Unnamed14</a></a></code></h4>
+<h4 id='method.hypercall' class='method'><code>fn <a href='#method.hypercall' class='fnname'>hypercall</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed15.html' title='kvm::Struct_Unnamed15'>Struct_Unnamed15</a></a></code></h4>
+<h4 id='method.hypercall_mut' class='method'><code>fn <a href='#method.hypercall_mut' class='fnname'>hypercall_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed15.html' title='kvm::Struct_Unnamed15'>Struct_Unnamed15</a></a></code></h4>
+<h4 id='method.tpr_access' class='method'><code>fn <a href='#method.tpr_access' class='fnname'>tpr_access</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed16.html' title='kvm::Struct_Unnamed16'>Struct_Unnamed16</a></a></code></h4>
+<h4 id='method.tpr_access_mut' class='method'><code>fn <a href='#method.tpr_access_mut' class='fnname'>tpr_access_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed16.html' title='kvm::Struct_Unnamed16'>Struct_Unnamed16</a></a></code></h4>
+<h4 id='method.s390_sieic' class='method'><code>fn <a href='#method.s390_sieic' class='fnname'>s390_sieic</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed17.html' title='kvm::Struct_Unnamed17'>Struct_Unnamed17</a></a></code></h4>
+<h4 id='method.s390_sieic_mut' class='method'><code>fn <a href='#method.s390_sieic_mut' class='fnname'>s390_sieic_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed17.html' title='kvm::Struct_Unnamed17'>Struct_Unnamed17</a></a></code></h4>
+<h4 id='method.s390_reset_flags' class='method'><code>fn <a href='#method.s390_reset_flags' class='fnname'>s390_reset_flags</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a></a></code></h4>
+<h4 id='method.s390_reset_flags_mut' class='method'><code>fn <a href='#method.s390_reset_flags_mut' class='fnname'>s390_reset_flags_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a></a></code></h4>
+<h4 id='method.s390_ucontrol' class='method'><code>fn <a href='#method.s390_ucontrol' class='fnname'>s390_ucontrol</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed18.html' title='kvm::Struct_Unnamed18'>Struct_Unnamed18</a></a></code></h4>
+<h4 id='method.s390_ucontrol_mut' class='method'><code>fn <a href='#method.s390_ucontrol_mut' class='fnname'>s390_ucontrol_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed18.html' title='kvm::Struct_Unnamed18'>Struct_Unnamed18</a></a></code></h4>
+<h4 id='method.dcr' class='method'><code>fn <a href='#method.dcr' class='fnname'>dcr</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed19.html' title='kvm::Struct_Unnamed19'>Struct_Unnamed19</a></a></code></h4>
+<h4 id='method.dcr_mut' class='method'><code>fn <a href='#method.dcr_mut' class='fnname'>dcr_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed19.html' title='kvm::Struct_Unnamed19'>Struct_Unnamed19</a></a></code></h4>
+<h4 id='method.internal' class='method'><code>fn <a href='#method.internal' class='fnname'>internal</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed20.html' title='kvm::Struct_Unnamed20'>Struct_Unnamed20</a></a></code></h4>
+<h4 id='method.internal_mut' class='method'><code>fn <a href='#method.internal_mut' class='fnname'>internal_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed20.html' title='kvm::Struct_Unnamed20'>Struct_Unnamed20</a></a></code></h4>
+<h4 id='method.osi' class='method'><code>fn <a href='#method.osi' class='fnname'>osi</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed21.html' title='kvm::Struct_Unnamed21'>Struct_Unnamed21</a></a></code></h4>
+<h4 id='method.osi_mut' class='method'><code>fn <a href='#method.osi_mut' class='fnname'>osi_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed21.html' title='kvm::Struct_Unnamed21'>Struct_Unnamed21</a></a></code></h4>
+<h4 id='method.papr_hcall' class='method'><code>fn <a href='#method.papr_hcall' class='fnname'>papr_hcall</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed22.html' title='kvm::Struct_Unnamed22'>Struct_Unnamed22</a></a></code></h4>
+<h4 id='method.papr_hcall_mut' class='method'><code>fn <a href='#method.papr_hcall_mut' class='fnname'>papr_hcall_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed22.html' title='kvm::Struct_Unnamed22'>Struct_Unnamed22</a></a></code></h4>
+<h4 id='method.s390_tsch' class='method'><code>fn <a href='#method.s390_tsch' class='fnname'>s390_tsch</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed23.html' title='kvm::Struct_Unnamed23'>Struct_Unnamed23</a></a></code></h4>
+<h4 id='method.s390_tsch_mut' class='method'><code>fn <a href='#method.s390_tsch_mut' class='fnname'>s390_tsch_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed23.html' title='kvm::Struct_Unnamed23'>Struct_Unnamed23</a></a></code></h4>
+<h4 id='method.epr' class='method'><code>fn <a href='#method.epr' class='fnname'>epr</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed24.html' title='kvm::Struct_Unnamed24'>Struct_Unnamed24</a></a></code></h4>
+<h4 id='method.epr_mut' class='method'><code>fn <a href='#method.epr_mut' class='fnname'>epr_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed24.html' title='kvm::Struct_Unnamed24'>Struct_Unnamed24</a></a></code></h4>
+<h4 id='method.system_event' class='method'><code>fn <a href='#method.system_event' class='fnname'>system_event</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../kvm/struct.Struct_Unnamed25.html' title='kvm::Struct_Unnamed25'>Struct_Unnamed25</a></a></code></h4>
+<h4 id='method.system_event_mut' class='method'><code>fn <a href='#method.system_event_mut' class='fnname'>system_event_mut</a>(&amp;mut self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../kvm/struct.Struct_Unnamed25.html' title='kvm::Struct_Unnamed25'>Struct_Unnamed25</a></a></code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../kvm/struct.Run.html' title='kvm::Run'>Run</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; Self</code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../kvm/struct.Run.html' title='kvm::Run'>Run</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; Self</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../kvm/struct.Run.html' title='kvm::Run'>Run</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, fmt: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../kvm/struct.Run.html' title='kvm::Run'>Run</a></code></h3><div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "kvm";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>
