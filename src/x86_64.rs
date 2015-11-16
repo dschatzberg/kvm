@@ -3,7 +3,7 @@ use std::{mem, slice};
 use std::ops::{Deref, DerefMut};
 
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Copy, Debug)]
 pub struct PicState {
     pub last_irr: u8,
     pub irr: u8,
@@ -360,11 +360,11 @@ impl ::std::default::Default for CpuidEntry2 {
     }
 }
 
+#[allow(missing_copy_implementations)]
 #[repr(C)]
 pub struct Cpuid2 {
     pub nent: u32,
     padding: u32,
-    entries: [CpuidEntry2],
 }
 
 pub struct CpuidHandle {
@@ -374,11 +374,10 @@ pub struct CpuidHandle {
 impl CpuidHandle {
     pub fn new(nent: u32) -> CpuidHandle {
         unsafe {
-            let ptr = calloc(1,
-                             8 +
-                             nent as usize * mem::size_of::<CpuidEntry2>());
+            let sz = mem::size_of::<Cpuid2>() +
+                     nent as usize * mem::size_of::<CpuidEntry2>();
+            let ptr = calloc(1, sz) as *mut Cpuid2;
             assert!(!ptr.is_null());
-            let ptr: *mut Cpuid2 = mem::transmute((ptr, nent as usize));
             (*ptr).nent = nent;
             CpuidHandle { cpuid: ptr }
         }
@@ -388,13 +387,13 @@ impl CpuidHandle {
 impl Deref for CpuidHandle {
     type Target = Cpuid2;
 
-    fn deref<'a>(&'a self) -> &'a Cpuid2 {
+    fn deref(&self) -> &Cpuid2 {
         unsafe { &*self.cpuid }
     }
 }
 
 impl DerefMut for CpuidHandle {
-    fn deref_mut<'a>(&'a mut self) -> &'a mut Cpuid2 {
+    fn deref_mut(&mut self) -> &mut Cpuid2 {
         unsafe { &mut *self.cpuid }
     }
 }
@@ -402,8 +401,7 @@ impl DerefMut for CpuidHandle {
 impl Drop for CpuidHandle {
     fn drop(&mut self) {
         unsafe {
-            let (ptr, _): (*mut c_void, usize) = mem::transmute(self.cpuid);
-            free(ptr);
+            free(self.cpuid as *mut c_void);
         }
     }
 }
@@ -411,14 +409,18 @@ impl Drop for CpuidHandle {
 impl Cpuid2 {
     pub fn entries(&self) -> &[CpuidEntry2] {
         unsafe {
-            let first = self.entries.get_unchecked(0);
-            slice::from_raw_parts(first as *const _, self.nent as usize)
+            let begin: *const Cpuid2 = self;
+            let first_ent = (begin as *const u8)
+                                .offset(mem::size_of::<Cpuid2>() as isize);
+            slice::from_raw_parts(first_ent as *const _, self.nent as usize)
         }
     }
     pub fn entries_mut(&mut self) -> &mut [CpuidEntry2] {
         unsafe {
-            let first = self.entries.get_unchecked_mut(0);
-            slice::from_raw_parts_mut(first as *mut _, self.nent as usize)
+            let begin: *mut Cpuid2 = self;
+            let first_ent = (begin as *mut u8)
+                                .offset(mem::size_of::<Cpuid2>() as isize);
+            slice::from_raw_parts_mut(first_ent as *mut _, self.nent as usize)
         }
     }
 }
@@ -451,7 +453,7 @@ impl ::std::default::Default for PitChannelState {
     }
 }
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Copy, Debug)]
 pub struct DebugExitArch {
     pub exception: u32,
     pub pad: u32,

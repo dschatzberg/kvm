@@ -2,15 +2,25 @@
 name = "kvm"
 version = "0.1.0"
 authors = ["Dan Schatzberg <schatzberg.dan@gmail.com>"]
-description = "Bindings for KVM interface"
-homepage = "https://github.com/dschatzberg/kvm"
 repository = "https://github.com/dschatzberg/kvm.git"
+homepage = "https://github.com/dschatzberg/kvm"
+description = "Bindings for KVM interface"
 keywords = ["kvm", "virtualization"]
 license = "Apache-2.0"
+readme = "README.md"
+build = "build.rs"
 
 [dependencies]
+clippy = {version = "0.0.23", optional = true}
 errno = "0.1.4"
 ioctl = "0.3.3"
 libc = "0.2"
 log = "0.3"
 memmap = "0.2.1"
+
+[build-dependencies]
+gcc = "0.3"
+
+[features]
+default = []
+dev = ["clippy"]
