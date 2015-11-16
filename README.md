@@ -3,6 +3,9 @@
 Rust interface to the KVM Hypervisor
 
 ![Build Status](https://travis-ci.org/dschatzberg/kvm.svg?branch=master)
+![Downloads](https://img.shields.io/crates/d/kvm.svg)
+![Version](https://img.shields.io/crates/v/kvm.svg)
+![License](https://img.shields.io/crates/l/kvm.svg)
 
 [Documentation](https://dschatzberg.github.io/kvm/)
 
