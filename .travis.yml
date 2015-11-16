@@ -9,7 +9,7 @@ rust:
 - nightly
 - beta
 - stable
-- 1.0.0
+- 1.1.0
 before_script:
 - |
   pip install 'travis-cargo<0.2' --user &&
@@ -23,4 +23,5 @@ after_success:
 - travis-cargo coveralls --no-sudo
 env:
   global:
+  - TRAVIS_CARGO_NIGHTLY_FEATURE=dev
   - secure: kU5w5o4eU+xSPoEauSWxBe0E7ck4Wps+vjQ/KnxBy3XYofHeuzD+dS1Vswd/mRbhsKSXvGXo7U8IPxkL9b15i6ICs50BC6Hmma3ZTug4LkrMEH2vVKmrn6ljqCh3BTA+NiYuG/cxvEwHMnjHLD559ugFANWl41SF4yGyLQth0hPlowUMFsv0fkyuAqpHxZPEDzfm4UNyul1SkHmQL1lZJKFHqby6gdxe+HTVd6wD71gKhbBaBrggpuUnr/4fH8F+DtHDURLnCKsmUFSmQn1fWr9QxHZDHUKl/ddS4LFzadIElzP+mSx1g3YE/lPzlrh+/o8asHZERT2GbwMCLilz5vQc0z0ih6yr7GGLaX7XIHLEmITDwoCSwbSGQGLlsJ8G9852KCT1SpW7yvJqBwH2lNhZIbswD6azB4oZkSrbngWM9u3/8I64n/rAQM7wHGQKz2N25jv6Ypv/jtSzAovjnTTlP0is+w2NdGDvnLufq0pYBgXRjlTbNTdzmzL92MfpZNoAxf1UQyFnOY1dGFsnGecCvKnkUUrSbjHi/UAY1u8MW8B+qMIjk7WydpdjeE9jspY/DzGcj7oUW/dZFgOfz2gKoELs1MWOeBB0swUEAdgclxAIcaOwY+XhFjdi/hvFMYLOKfvb2qJmMgPz2zcK3LSouQyHbjvmuw7cYNkzCeU=
