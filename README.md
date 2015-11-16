@@ -6,6 +6,8 @@ Rust interface to the KVM Hypervisor
 
 [Documentation](https://dschatzberg.github.io/kvm/)
 
+Check out the [examples](https://github.com/dschatzberg/kvm/tree/master/examples)
+
 General documentation for KVM can be found in the
 [Kernel Documentation Tree](https://kernel.org/doc/Documentation/virtual/kvm/api.txt)
 and through
