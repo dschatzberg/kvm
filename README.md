@@ -1,12 +1,13 @@
 # KVM
 
 Rust interface to the KVM Hypervisor
-[![Build Status](https://travis-ci.org/dschatzberg/kvm.svg?branch=master)]
 
-[[Documentation](https://dschatzberg.github.io/kvm/)]
+![Build Status](https://travis-ci.org/dschatzberg/kvm.svg?branch=master)
+
+[Documentation](https://dschatzberg.github.io/kvm/)
 
 General documentation for KVM can be found in the
-[kernel Docuementation tree](https://kernel.org/doc/Documentation/virtual/kvm/api.txt)
+[Kernel Documentation Tree](https://kernel.org/doc/Documentation/virtual/kvm/api.txt)
 and through
 [this LWN article by Josh Triplett](https://lwn.net/Articles/658511/)
 ## What is KVM?
