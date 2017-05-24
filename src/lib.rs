@@ -979,10 +979,10 @@ impl<'a> Vcpu<'a> {
     }
 
     /// Run the `Vcpu`
-    pub unsafe fn run(&mut self) -> Result<&mut Run> {
+    pub unsafe fn run(&mut self) -> Result<Run> {
         let ret = kvm_run(self.fd.as_raw_fd());
         if ret == 0 {
-            Ok(&mut *(self.mmap.mut_ptr() as *mut Run))
+            Ok(*(self.mmap.mut_ptr() as *mut Run))
         } else {
             Err(Error::last_os_error())
         }
