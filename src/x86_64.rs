@@ -161,7 +161,7 @@ impl ::std::default::Default for LapicState {
     }
 }
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Copy, Debug)]
 pub struct Segment {
     pub base: u64,
     pub limit: u32,
@@ -188,7 +188,7 @@ impl ::std::default::Default for Segment {
     }
 }
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Copy, Debug)]
 pub struct Dtable {
     pub base: u64,
     pub limit: u16,
@@ -205,7 +205,7 @@ impl ::std::default::Default for Dtable {
     }
 }
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Copy, Debug)]
 pub struct Sregs {
     pub cs: Segment,
     pub ds: Segment,
